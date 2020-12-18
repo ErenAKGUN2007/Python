@@ -201,7 +201,46 @@ class Araba:
         print("Bir Araba Silindi.")
         self.adet-=1
 arabalar=[]
-for _ in range(30):
+for _ in range(30): #30 Araba
     araba=Araba()
     arabalar.append(araba)
-#% sınıfa ait methodalr @classmethod la tanımlanır
+#% sınıfa ait methodlar @classmethod la tanımlanır
+
+#%
+class Hayvan:
+    def __init__(self,ad):# sadece public aktarılır.
+        self.ad=ad
+        print(f"{self.ad} HAYVANI oluşturuldu.")
+    def sesCıkar(self):
+        print(f"{self.ad} Hayvanı Ses Çıkardı.")    
+
+class Kedi(Hayvan):
+    def __init__(self, isim):
+        self.ad=isim
+        print(f"{self.ad} KEDİSİ oluşturuldu.")
+
+class Kopek(Hayvan):
+    def sesCıkar(self,kez):
+        print(kez*f"{self.ad} KÖPEĞİ Ses Çıkardı.")    
+#%
+class dizi(list):
+    def toplam(self):
+        toplam=0
+        for i in self.capy():
+            toplam+=i
+        return toplam
+
+a=dizi()
+a.append(20)
+print(a[0])
+
+#%
+h1=Hayvan("Hayvan")
+k1=Kedi("Minnoş")
+kp1=Kopek("Köpek")
+h1.sesCıkar()
+#k1.sesCıkar() hata
+k1.sesCıkar(3)
+kp1.sesCıkar()
+
+
