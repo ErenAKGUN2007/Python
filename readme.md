@@ -1,1 +1,1 @@
-rread meee
+Beni oku
