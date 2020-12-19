@@ -233,7 +233,6 @@ class dizi(list):
 a=dizi()
 a.append(20)
 print(a[0])
-
 #%
 h1=Hayvan("Hayvan")
 k1=Kedi("Minnoş")
@@ -242,5 +241,3 @@ h1.sesCıkar()
 #k1.sesCıkar() hata
 k1.sesCıkar(3)
 kp1.sesCıkar()
-
-
