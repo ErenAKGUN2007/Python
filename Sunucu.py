@@ -37,7 +37,7 @@ def islem(dosya):
     pkonud=""
     durum=" açıldı."
     if (dosya=="favicon.ico" and not favicongoster) or ((not dosya in dosyalar) and ((not olmayandosyagoster))) or (dosya=="...///..." and not erisimgoster):
-        #return send_from_directory(".",dosya)
+        #return dosyagonder(".",dosya)
         return dosyagonder(".",dosya if dosya=="favicon.ico" else "...")
     get=urlget(istek.headers.get("User-Agent"))
     eposta=istek.args.get("e")
