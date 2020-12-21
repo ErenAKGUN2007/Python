@@ -1,4 +1,4 @@
-#%%
+#%
 #sayi=float(input("Sayi Gir: "))
 #if sayi>0:
 #    print("Sayi Pozitif")
@@ -6,7 +6,7 @@
 #    print("Sayi Negatif")
 #else:
 #    print("Sayi Pozitif Ya Da Negatif Değil")
-# %%
+# %
 #dz=21.0
 #ort=79
 #zayif=1
@@ -14,8 +14,8 @@
 #    print("Geçti")
 #else:
 #    print("Kaldı")
-# %%
-#%% if-elif-else
+# %
+#% if-elif-else
 
 sayi=float(input("sayı gir:"))
 
@@ -40,7 +40,7 @@ else:
 
 
 
-# %% and or not şart birleştirme
+# % and or not şart birleştirme
 
 dz=21.0
 notort=79.0
@@ -57,10 +57,10 @@ else:
 
 
 
-# %%
+# %
 a=2;d=3;e=8
 print(a,d,e)
-# %% döngü for döngüsü
+# % döngü for döngüsü
 
 l=[[10,20],20,[3,50,8],(1,2,3)]
 
@@ -76,7 +76,7 @@ ad="hasan"
 for harf in ad:
     print(harf)
 
-# %%  for liste
+# %  for liste
 
 l3=[1,2,3]
 for e in l3:
@@ -84,7 +84,7 @@ for e in l3:
 print(l3)
 
 
-# %% range komutu
+# % range komutu
 
 #range(sayi)
 print(range(5))
@@ -112,4 +112,4 @@ for i in range(30,22,-1):
 
 # for i in range(10.0,20.0,0.5):
 #     pass
-# %%
+# %

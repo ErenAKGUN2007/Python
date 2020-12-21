@@ -1,4 +1,4 @@
-#%%
+#%
 print("merhaba")
 isim="Adnan"
 yas=20
@@ -6,7 +6,7 @@ boy=1.74
 print("merhaba",isim,"kaç yaşındasın?",sep=" ",end="\n") #\n yeni satır enter
 print("merhaba",yas,"yaşındayım",boy,"metre boyundayım",end="\n")
 
-# %%
+# %
 r1="sarı"
 r2="kırmızı"
 print(r1,r2)
@@ -27,7 +27,7 @@ s1=1
 s2=1
 s3=1
 s1,s2,s3=s2,s3,s1+s2+s3
-# %% Tip dönüşümler
+# % Tip dönüşümler
 yas=30.0
 
 print(type(yas))
@@ -39,7 +39,7 @@ if type(yas)==type(s1):
 else:
     print("farklı")
 
-# %% operatörler (işleçler)
+# % operatörler (işleçler)
 s1=38
 s2=40.0
 s3=s1+s2
@@ -52,7 +52,7 @@ kalan=bolunen % bolen
 print(bolunen,"in",bolen,"e bölümünden bolum=",bolum,"kalan=",kalan)
 
 
-# %% tip dönüşümleri int,str,float
+# % tip dönüşümleri int,str,float
 #int(deger),float(deger),str(deger)
 print(int())
 print(float())
@@ -66,7 +66,7 @@ yas=40
 
 mesaj=(str(isim)+" "+str(yas))
 print(mesaj)
-# %% bool tipler
+# % bool tipler
 
 evliMi=True
 print(evliMi)
@@ -90,7 +90,7 @@ print(10*"-")
 sayi="    -30_000.0      "
 print(int(sayi))
 print(float(sayi))
-#%% karşılaştırma operatörleri
+#% karşılaştırma operatörleri
 
 s1=10
 s2=30
@@ -114,7 +114,7 @@ sonuc=int(s1==48)+int(s2=="kırmızı")+int(s3=="edirne")
 print("sonuç=",sonuc*5)
 
 
-# %% kaydırma operatörleri
+# % kaydırma operatörleri
 
 ts=3
 print(ts<<2)
