@@ -1,14 +1,23 @@
+"""
+Flask Kullanılarak Yapılmış Basit Dosya Sunucusu 
+HTML dosyaları: "%dosyayolu%\templates\"
+22.12.2020
+"""
 from flask import Flask, request as istek, send_from_directory as dosyagonder, render_template as html
 from datetime import datetime as tarihsaat
 from user_agents import parse as urlget
 from logging import getLogger as log
 from socket import gethostbyaddr as dnslookup
-from os import walk, path # ssl ipgoster 
-#import cryptography
+from os import walk, path
+#import cryptography #ssl
 dosyalar=[]
 for (yol, yoladi, dosyaadi) in walk(path.dirname(path.realpath(__file__))):
     dosyalar.extend(dosyaadi)
     break #Sadece Aynı Klasördekiler 
+
+
+"""Ayarlar"""
+
 dosyagoster=False # GET Konu Geldiği Halde Dosya Adını Göster (Her Zaman Get Gelmediği Veya Hata Olduğu Zaman Gösterilir.)
 alanadigoster=True #Varsa Alan adı Göster 
 erisimgoster=True # Dosya İstenmese de Erişim Kaydını Göster
@@ -17,10 +26,13 @@ ipgoster=True# Alan Adı Varken de IP Göster YAPILACAK 0 Gösterme 1 Alan adı 
 favicongoster=False#Favicon.ico dosya isteklerini göster
 logging=False# ayrıntılı olay kaydı
 debug=False# hata ayıklama
-cokluistek=False
-https_adhoc=False
+cokluistek=False# Aynı anda birden fazla istemciye yanıt ver
+https_adhoc=False# ssl hatası veren https
 sunucuport=5000#tcp
 saatturu="%d/%m/%Y %H:%M:%S"
+
+
+
 
 sunucu=Flask(__name__)
 @sunucu.errorhandler(404)
@@ -31,6 +43,7 @@ def e500(_):
     return html("Error500.html")
 @sunucu.route('/<dosya>')
 def islem(dosya):
+    # İşlem "Sunucu Eski.py" 'de Yaklaşık 800 Satırdı, Şimdi 60 Satır
     tarayici=True
     sistem=True
     psistem=""
