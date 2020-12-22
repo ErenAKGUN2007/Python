@@ -1,8 +1,10 @@
 """
 Flask Kullanılarak Yapılmış Basit Dosya Sunucusu 
+Test Dosyası: SunucuTest.bat
 HTML dosyaları: "%dosyayolu%\templates\"
 22.12.2020
 """
+
 from flask import Flask, request as istek, send_from_directory as dosyagonder, render_template as html
 from datetime import datetime as tarihsaat
 from user_agents import parse as urlget
