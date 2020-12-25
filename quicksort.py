@@ -7,7 +7,8 @@ def quickSort(dizi):
         sol=[i for i in dizi[1:] if i<=pivot]
         sag=[i for i in dizi[1:] if i>pivot]
         return quickSort(sol)+[pivot]+quickSort(sag)
-sirasizd=[random(1,1000) for i in range(20)]
-print(sirasizd)
-print(10*"-")
-print(quickSort(sirasizd))
+if __name__=="__main__":
+    sirasizd=[random(1,1000) for i in range(20)]
+    print(sirasizd)
+    print(10*"-")
+    print(quickSort(sirasizd))

@@ -13,7 +13,8 @@ def selectionSort(dizi):
         eky=enkucugubul(dizi)
         sirali.append(dizi.pop(eky))
     return sirali
-sirasizd=[random(1,1000) for i in range(20)]
-print(sirasizd)
-print(10*"-")
-print(selectionSort(sirasizd))
+if __name__=="__main__":
+    sirasizd=[random(1,1000) for i in range(20)]
+    print(sirasizd)
+    print(10*"-")
+    print(selectionSort(sirasizd))

@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-#import numpy as np
+import numpy as np
 x=[]
 y=[]
 for i in range(-100,101,1):
@@ -9,6 +9,6 @@ for t in x:
     y.append(islem)
 plt.plot(x,y)
 print(x,y)
-plt.savefig("Eren_AKGÜN2.png")
+#plt.savefig("Eren_AKGÜN2.png")
 plt.show()
 #2x^2 - 3x - 5
