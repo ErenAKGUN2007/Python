@@ -2,13 +2,13 @@
 
 # % diziler neden lazım(liste)
 import random
-d1 = random.randint(0,1000)
-d2 = random.randint(0,1000)
+d1=random.randint(0,1000)
+d2=random.randint(0,1000)
 #98 satır daha
 
-rastgeleSayilar = [] #list() boş liste
+rastgeleSayilar=[] #list() boş liste
 for i in range(100):
-    tutulan = random.randint(0,1000)
+    tutulan=random.randint(0,1000)
     rastgeleSayilar.append(tutulan)
 
 print(rastgeleSayilar)
@@ -27,8 +27,8 @@ print(resim[0])
 print(resim[0][1])
 print(resim[2][1])
 # % liste boyutları
-l1 = [1,2,3]
-l2 = [[1],[2],[3]]
+l1=[1,2,3]
+l2=[[1],[2],[3]]
 print(l1[1]+1)
 print(l2[1]+1) # bu satır hata verir int ile list toplanamaz
 print(l2[1][0]+1)
@@ -126,7 +126,7 @@ print(l)
 l.insert(1,70)
 print(l)
 for _ in range(3):
-    a = int(input("değer gir"))
+    a=int(input("değer gir"))
     l.insert(0,a)
     print(l)
 
@@ -238,19 +238,19 @@ dl=op_2kat(l)
 print(l)
 print(dl)
 # % list comprhesion
-l_z = [i for i in range(1,10)]
+l_z=[i for i in range(1,10)]
 print(l_z)
 
-l_z1 = [0 for i in range(10)]
+l_z1=[0 for i in range(10)]
 print(l_z1)
 
-l_z2 = [i*i for i in range(1,10)]
+l_z2=[i*i for i in range(1,10)]
 print(l_z2)
 
 # % içi -1 lerle dolu 5*5 lik bir liste
-skl = []
+skl=[]
 
-skl = [[-1 for t in range(5)] for i in range(5)]
+skl=[[-1 for t in range(5)] for i in range(5)]
 print(skl)
 print(10*"*")
 listem=[]
@@ -263,7 +263,7 @@ for i in range(5):
 print(listem)
 
 # % 1-9 arasında sayılardan oluşan 3*3 lük dliste
-listem = [[ 3*i+1+j for j in range(0,3)]for i in range(0,3)]
+listem=[[ 3*i+1+j for j in range(0,3)]for i in range(0,3)]
 print(listem)
 # % 100 elemanlı 
 # 1-1000 arası rastgele sayılardan  oluşan liste

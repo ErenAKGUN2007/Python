@@ -3,15 +3,18 @@ Flask Kullanılarak Yapılmış Basit Dosya Sunucusu
 Test Dosyası: SunucuTest.bat
 HTML dosyaları: "%dosyayolu%\templates\"
 12.09.2019
+Son Değişiklik: 29.12.2020
 """
-
-from flask import Flask, request as istek, send_from_directory as dosyagonder, render_template as html
-from datetime import datetime as tarihsaat
-from user_agents import parse as urlget
-from logging import getLogger as log
-from socket import gethostbyaddr as dnslookup
-from os import walk, path
+try:
+    from flask import Flask, request as istek, send_from_directory as dosyagonder, render_template as html
+    from datetime import datetime as tarihsaat
+    from user_agents import parse as urlget
+    from logging import getLogger as log
+    from socket import gethostbyaddr as dnslookup
+    from os import walk, path
 #import cryptography #ssl
+except:
+    raise ImportError("'Flask, datetime, user_agents, logging, socket, os' Import Edilemedi.")
 dosyalar=[]
 for (yol, yoladi, dosyaadi) in walk(path.dirname(path.realpath(__file__))):
     dosyalar.extend(dosyaadi)
