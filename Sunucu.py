@@ -3,7 +3,7 @@ Flask Kullanılarak Yapılmış Basit Dosya Sunucusu
 Test Dosyası: SunucuTest.bat
 HTML dosyaları: "%dosyayolu%\templates\"
 12.09.2019
-Son Değişiklik: 29.12.2020
+Son Değişiklik: 30.12.2020
 """
 try:
     from flask import Flask, request as istek, send_from_directory as dosyagonder, render_template as html
@@ -12,9 +12,12 @@ try:
     from logging import getLogger as log
     from socket import gethostbyaddr as dnslookup
     from os import walk, path
+    from sys import modules
 #import cryptography #ssl
 except:
-    raise ImportError("'Flask, datetime, user_agents, logging, socket, os' Import Edilemedi.")
+    raise ImportError("'Flask, datetime, user_agents, logging, socket, os, sys' Import Edilemedi.")
+eh={True:"Evet",False:"Hayır",True:"Hayır"}
+cli = modules['flask.cli']
 dosyalar=[]
 for (yol, yoladi, dosyaadi) in walk(path.dirname(path.realpath(__file__))):
     dosyalar.extend(dosyaadi)
@@ -31,6 +34,8 @@ ipgoster=True# Alan Adı Varken de IP Göster YAPILACAK 0 Gösterme 1 Alan adı 
 favicongoster=False#Favicon.ico dosya isteklerini göster
 logging=False# ayrıntılı olay kaydı
 debug=False# hata ayıklama
+uyari=False#Flask'ın Başlangıçtaki Bilgilendirmesi
+bilgi=True#Başlangıçta Bilgilendirme YAPILACAK
 cokluistek=False# Aynı anda birden fazla istemciye yanıt ver
 https_adhoc=False# ssl hatası veren https
 sunucuport=5000#tcp
@@ -38,7 +43,7 @@ saatturu="%d/%m/%Y %H:%M:%S"
 
 
 
-
+#sunucu=Flask(__name__,template_folder="HTML Dosyaları")
 sunucu=Flask(__name__)
 @sunucu.errorhandler(404)
 def e404(_):
@@ -139,9 +144,13 @@ def header(response):
     response.cache_control.max_age=0
     return response
 if __name__=="__main__":
+    if (not uyari) and (not (debug or logging)):
+        cli.show_server_banner = lambda *x: None
+    if not logging:
+        log("werkzeug").disabled=True
+    if bilgi:
+        print(f"Flask: {__file__}\nDebug: {eh.get(debug)}\nLogging: {eh.get(logging)}\nSaat: {tarihsaat.now().strftime(saatturu)}")
     if debug or logging:
         print(f"Yol: {path.realpath(__file__)}")
         print(f"Dosyalar: {dosyalar}")
-    if not logging:
-        log("werkzeug").disabled=True
     sunucu.run(host='0.0.0.0',port=sunucuport,threaded=cokluistek,debug=debug,ssl_context='adhoc' if https_adhoc else None) # ,ssl_context='adhoc' Sadece HTTPS # ,threaded=True Çoklu İstekd
