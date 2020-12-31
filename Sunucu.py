@@ -5,6 +5,7 @@ HTML dosyaları: "%dosyayolu%\templates\"
 12.09.2019
 Son Değişiklik: 30.12.2020
 """
+#SSL ve IPGöster Yapılacak
 try:
     from flask import Flask, request as istek, send_from_directory as dosyagonder, render_template as html
     from datetime import datetime as tarihsaat
@@ -13,10 +14,10 @@ try:
     from socket import gethostbyaddr as dnslookup
     from os import walk, path
     from sys import modules
-#import cryptography #ssl
+    #import cryptography
 except:
-    raise ImportError("'Flask, datetime, user_agents, logging, socket, os, sys' Import Edilemedi.")
-eh={True:"Evet",False:"Hayır",True:"Hayır"}
+    raise ImportError("'Flask, datetime, user_agents, logging, socket, os, sys, cryptography' Import Edilemedi.")
+eh={True:"Evet",False:"Hayır",None:"Hayır"}
 cli = modules['flask.cli']
 dosyalar=[]
 for (yol, yoladi, dosyaadi) in walk(path.dirname(path.realpath(__file__))):
@@ -35,7 +36,8 @@ favicongoster=False#Favicon.ico dosya isteklerini göster
 logging=False# ayrıntılı olay kaydı
 debug=False# hata ayıklama
 uyari=False#Flask'ın Başlangıçtaki Bilgilendirmesi
-bilgi=True#Başlangıçta Bilgilendirme YAPILACAK
+bilgi=True#Başlangıçta Bilgilendirme
+tamyol=False #başlangıçtaki bilgilendirmede dosya adı yerine tam yolu göster.
 cokluistek=False# Aynı anda birden fazla istemciye yanıt ver
 https_adhoc=False# ssl hatası veren https
 sunucuport=5000#tcp
@@ -149,7 +151,7 @@ if __name__=="__main__":
     if not logging:
         log("werkzeug").disabled=True
     if bilgi:
-        print(f"Flask: {__file__}\nDebug: {eh.get(debug)}\nLogging: {eh.get(logging)}\nSaat: {tarihsaat.now().strftime(saatturu)}")
+        print(f"Flask: {__file__ if tamyol else path.basename(__file__)}\nDebug: {eh.get(debug)}\nLogging: {eh.get(logging)}\nSaat: {tarihsaat.now().strftime(saatturu)}")
     if debug or logging:
         print(f"Yol: {path.realpath(__file__)}")
         print(f"Dosyalar: {dosyalar}")
