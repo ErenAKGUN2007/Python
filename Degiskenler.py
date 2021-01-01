@@ -1,4 +1,5 @@
 #%
+#
 print("merhaba")
 isim="Adnan"
 yas=20
