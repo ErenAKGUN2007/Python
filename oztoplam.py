@@ -5,6 +5,7 @@ def topla(liste):
     for i in liste:
         if isinstance(liste,dict):
             toplam+=topla(liste.get(i))
+            #toplam+=topla(liste[i]) #Eğer Anahtar Alınacaksa
         elif isinstance(i,(list,tuple,dict,set)):
             toplam+=topla(i)
         elif isinstance(i,(int,float)):
