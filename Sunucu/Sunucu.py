@@ -30,7 +30,7 @@ for (yol, yoladi, dosyaadi) in walk(path.dirname(path.realpath(__file__))):
 dosyagoster=False # GET Konu Geldiği Halde Dosya Adını Göster (Her Zaman Get Gelmediği Veya Hata Olduğu Zaman Gösterilir.)
 alanadigoster=True #Varsa Alan adı Göster 
 erisimgoster=True # Dosya İstenmese de Erişim Kaydını Göster
-olmayandosyagoster=True
+olmayandosyagoster=True#Olmayan bir dosya isteğini göster
 ipgoster=True# Alan Adı Varken de IP Göster YAPILACAK 0 Gösterme 1 Alan adı varken Gösterme 2 E 
 favicongoster=False#Favicon.ico dosya isteklerini göster
 logging=False# ayrıntılı olay kaydı
