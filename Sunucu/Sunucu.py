@@ -1,7 +1,7 @@
 """
 Flask Kullanılarak Yapılmış Basit Dosya Sunucusu 
 Test Dosyası: SunucuTest.bat
-HTML dosyaları: "%dosyayolu%\templates\"
+Şu anki HTML dosyaları: "%dosyayolu%\templates\"
 12.09.2019
 Son Değişiklik: 30.12.2020
 """
@@ -41,12 +41,13 @@ tamyol=False #başlangıçtaki bilgilendirmede dosya adı yerine tam yolu göste
 cokluistek=False# Aynı anda birden fazla istemciye yanıt ver
 https_adhoc=False# ssl hatası veren https
 sunucuport=5000#tcp
+klasor=None#HTML Dosyalarının konumu (%dosyanınyolu%\%klasor%) şeklinde (Varsayılan: None (Yani templates))
 saatturu="%d/%m/%Y %H:%M:%S"
 
 
 
 #sunucu=Flask(__name__,template_folder="HTML Dosyaları")
-sunucu=Flask(__name__,template_folder="templates")
+sunucu=Flask(__name__,template_folder=klasor if klasor!=None else "templates")
 @sunucu.errorhandler(404)
 def e404(_):
     return html("Error404.html")
