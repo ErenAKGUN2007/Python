@@ -46,7 +46,7 @@ saatturu="%d/%m/%Y %H:%M:%S"
 
 
 #sunucu=Flask(__name__,template_folder="HTML Dosyaları")
-sunucu=Flask(__name__)
+sunucu=Flask(__name__,template_folder="templates")
 @sunucu.errorhandler(404)
 def e404(_):
     return html("Error404.html")
