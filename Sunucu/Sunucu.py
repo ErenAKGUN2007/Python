@@ -15,7 +15,7 @@ try:
     from os import walk, path
     from sys import modules
     #import cryptography
-except:
+except ImportError:
     raise ImportError("'Flask, datetime, user_agents, logging, socket, os, sys, cryptography' Import Edilemedi.")
 eh={True:"Evet",False:"Hayır",None:"Hayır"}
 cli = modules['flask.cli']
@@ -38,6 +38,7 @@ debug=False# hata ayıklama
 uyari=False#Flask'ın Başlangıçtaki Bilgilendirmesi
 bilgi=True#Başlangıçta Bilgilendirme
 tamyol=False #başlangıçtaki bilgilendirmede dosya adı yerine tam yolu göster.
+bosluk=True #başlangıçtaki bilgilendirmeden (Flask olmayan) sonra boşluk bırak
 cokluistek=False# Aynı anda birden fazla istemciye yanıt ver
 https_adhoc=False# ssl hatası veren https
 sunucuport=5000#tcp
@@ -153,7 +154,8 @@ if __name__=="__main__":
         log("werkzeug").disabled=True
     if bilgi:
         print(f"Flask: {__file__ if tamyol else path.basename(__file__)}\nDebug: {eh.get(debug)}\nLogging: {eh.get(logging)}\nSaat: {tarihsaat.now().strftime(saatturu)}")
+        print() if bosluk else None
     if debug or logging:
         print(f"Yol: {path.realpath(__file__)}")
         print(f"Dosyalar: {dosyalar}")
-    sunucu.run(host='0.0.0.0',port=sunucuport,threaded=cokluistek,debug=debug,ssl_context='adhoc' if https_adhoc else None) # ,ssl_context='adhoc' Sadece HTTPS # ,threaded=True Çoklu İstekd
+    sunucu.run(host='0.0.0.0',port=sunucuport,threaded=cokluistek,debug=debug,ssl_context='adhoc' if https_adhoc else None) # ,ssl_context='adhoc' Sadece HTTPS # ,threaded=True Çoklu İstek
