@@ -1,4 +1,3 @@
-from _typeshed import NoneType
 import numpy as np
 l1=np.zeros(100_000_000)
 print(l1.size)
@@ -69,8 +68,8 @@ pass
 pass
 
 
-#arrange=range
-ndt1=np.arrange(12)
+#arange=range
+ndt1=np.arange(12)
 print(ndt1)
 ndt1[3]=333
 print(ndt1)
@@ -95,7 +94,7 @@ print(10*"*")
 ndr0[1]=255
 print(ndr0)
 #slice
-ndr1=np.arrange(12)
+ndr1=np.arange(12)
 print(ndr1.shape)
 ndr1.shape=(3,4)
 print(ndr1.shape)
