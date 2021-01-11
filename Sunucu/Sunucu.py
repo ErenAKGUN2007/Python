@@ -17,7 +17,7 @@ try:
     from sys import modules
     #import cryptography
 except ImportError:
-    raise ImportError("'Flask, datetime, user_agents, logging, socket, os, sys, cryptography' Import Edilemedi.")
+    raise ImportError("'Flask, datetime, user_agents, logging, socket, os, sys, cryptography' Paketlerinden Bazıları Import Edilemedi.")
 eh={True:"Evet",False:"Hayır",None:"Hayır"}
 cli = modules['flask.cli']
 dosyalar=[]
