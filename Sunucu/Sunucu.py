@@ -3,7 +3,8 @@ Flask Kullanılarak Yapılmış Basit Dosya Sunucusu
 Test Dosyası: SunucuTest.bat
 Şu anki HTML dosyaları: "%dosyayolu%\templates\"
 12.09.2019
-Son Değişiklik: 30.12.2020
+Son Değişiklik: 11/01/2020
+
 """
 #SSL ve IPGöster Yapılacak
 try:
