@@ -15,7 +15,7 @@ c_center=(100,100)
 radius=50
 c_c=(255,0,0)
 c_r=(255,255,0)
-tknss=2
+tknss=2# -1 içi dolu demek
 rectangle(canvasR,start,end,c_r,tknss)
 circle(canvasC,c_center,radius,c_c,tknss)
 imshow("Siyah",canvasO)

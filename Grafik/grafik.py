@@ -8,6 +8,6 @@ for t in x:
     islem=((t**2)*2)-(t*3)-5
     y.append(islem)
 plt.plot(x,y)
-#plt.savefig("Eren_AKGÜN2.png")
+plt.savefig("Eren_AKGÜN.png")
 plt.show()
 #2x^2 - 3x - 5
