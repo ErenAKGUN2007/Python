@@ -1,6 +1,6 @@
 import numpy as np
 from os import getcwd, path
-from cv2 import imshow, waitKey, rectangle, circle, imwrite
+from cv2 import *
 cd=getcwd()
 c_path=path.join(cd,"opencv","images","Daire.jpg")
 r_path=path.join(cd,"opencv","images","Dikdörtgen.jpg")

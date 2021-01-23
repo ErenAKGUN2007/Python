@@ -1,4 +1,4 @@
-from cv2 import imread, waitKey, imshow, line, rectangle
+from cv2 import *
 import numpy as np
 from os import getcwd, path
 cd=getcwd()
