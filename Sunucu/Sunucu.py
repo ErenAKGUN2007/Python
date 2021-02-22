@@ -3,7 +3,7 @@ Flask Kullanılarak Yapılmış Basit Dosya Sunucusu
 Test Dosyası: SunucuTest.bat
 Şu anki HTML dosyaları: "%dosyayolu%\templates\"
 12.09.2019
-Son Değişiklik: 11/01/2020
+Son Değişiklik: 22.02.2021
 
 """
 #SSL ve IPGöster Yapılacak
@@ -40,7 +40,7 @@ uyari=False#Flask'ın Başlangıçtaki Bilgilendirmesi
 bilgi=True#Başlangıçta Bilgilendirme
 tamyol=False #başlangıçtaki bilgilendirmede dosya adı yerine tam yolu göster.
 bosluk=True #başlangıçtaki bilgilendirmeden (Flask olmayan) sonra boşluk bırak
-cokluistek=False# Aynı anda birden fazla istemciye yanıt ver
+cokluistek=True# Aynı anda birden fazla istemciye yanıt ver
 https_adhoc=False# ssl hatası veren https
 sunucuport=5000#tcp
 klasor=None#HTML Dosyalarının konumu (%dosyanınyolu%\%klasor%) şeklinde (Varsayılan: None (Yani templates))
