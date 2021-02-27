@@ -21,7 +21,7 @@ class App(QMainWindow):
     def closeEvent(self):
         self.pencereAcık=False
     def tiklandi(self):
-        print("Tıklandı")
+        #print("Tıklandı")
         ipath=os.path.join(self.cd,"opencv","images","chp2","zebrasmall.png")
         image=cv2.imread(ipath)
         h,w,c=image.shape
