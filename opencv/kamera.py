@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
 from PyQt5 import uic
 from PyQt5.QtGui import QImage, QPixmap
 import time
+FACE=True#############################
 class App(QMainWindow):
     def __init__(self):
         super(App,self).__init__()
@@ -30,10 +31,11 @@ class App(QMainWindow):
         while self.kamera_durumu and self.pencereAcık:
             ret,frame=cam.read()
             frame=cv2.resize(frame,dsize=None,fx=0.6,fy=0.6)
-            gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-            faces=face_cascade.detectMultiScale(gray,1.3,5)
-            for (x,y,w,h) in faces:
-                cv2.rectangle(frame,(x,y),(x+w,y+h),(215,120,0),2)
+            if FACE:
+                gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+                faces=face_cascade.detectMultiScale(gray,1.3,5)
+                for (x,y,w,h) in faces:
+                    cv2.rectangle(frame,(x,y),(x+w,y+h),(215,120,0),2)
             h,w,c=frame.shape
             frame=cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
             step=w*c #tarama adımı
