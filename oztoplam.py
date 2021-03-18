@@ -1,4 +1,15 @@
-def topla(liste):
+def topla(liste:int,float,list,tuple,set,dict) -> int or float:
+    """
+    Topla
+    =====
+    Sayı içeren bir objedeki tüm sayıları toplar.
+
+    Kullanım
+    --------
+    topla(<objeniz>)\n
+    <objeniz>'in içinde float varsa float, yoksa int döndürür.
+    <objeniz>'in içinde sayı yoksa 0 döndürür.
+    """
     toplam=0
     if isinstance(liste,(int,float)):
         return liste
